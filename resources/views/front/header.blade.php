@@ -16,29 +16,39 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
     <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
-    <link href="{{asset('assets_old/bower_components/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
-    <link href="{{asset('assets_old/dist/css/front.css')}}" rel="stylesheet">
-    <link href="{{asset('assets_old/bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('assets_old/plugin/polygot/css/polyglot-language-switcher.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/vendor/font-awesome/css/font-awesome.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets_old/plugin/flagstrap/css/flags.css')}}" rel="stylesheet" type="text/css">
 
-    <script src="{{asset('assets_old/bower_components/jquery/dist/jquery.js')}}" type="text/javascript"></script>
-    <script src="{{asset('assets_old/bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('assets_old/plugin/polygot/js/jquery.polyglot.language.switcher.js')}}" type="text/javascript"></script>
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/stylesheets/theme.css') }}" />
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/stylesheets/skins/default.css') }}" />
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/stylesheets/theme-custom.css') }}">
+
+
+
+
+    <!-- Vendor -->
+    <script src="{{ asset('assets/vendor/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('assets/vendor/nanoscroller/nanoscroller.js') }}"></script>
+    <script src="{{ asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('assets/vendor/magnific-popup/jquery.magnific-popup.js') }}"></script>
+    <script src="{{ asset('assets/vendor/jquery-placeholder/jquery-placeholder.js') }}"></script>
     <script src="{{asset('assets_old/plugin/flagstrap/js/jquery.flagstrap.min.js')}}" type="text/javascript"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="{{ asset('assets/javascripts/theme.js') }}"></script>
+    <!-- Theme Custom -->
+    <script src="{{ asset('assets/javascripts/theme.custom.js') }}"></script>
+    <!-- Theme Initialization Files -->
+    <script src="{{ asset('assets/javascripts/theme.init.js') }}"></script>
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('#polyglotLanguageSwitcher').polyglotLanguageSwitcher({
-                effect: 'fade',
-                testMode: true,
-                onChange: function(evt){
-                    $(location).attr('href','{{URL::route('set-locale')}}'+'?lang='+evt.selectedItem)
-                }
-            });
-        });
-    </script>
 </head>
