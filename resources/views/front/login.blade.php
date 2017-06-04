@@ -2,92 +2,93 @@
 @section('title')Login @Stop
 @section('content')
 
-    <div class="fullscreen-bg">
-        <video preload="none" autoplay="true" loop="true" muted poster="{{asset('assets_old/videos/city_screenshot.jpg')}}" class="fullscreen-bg__video">
-            <source src="{{asset('assets_old/videos/city.mp4')}}" type="video/mp4">
-        </video>
-    </div>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                <div class="hidden-sm hidden-xs" style="margin-left:-130px; margin-top:100px; margin-bottom:-100px;">
-                    <img src="{{asset('assets_old/images/logo_large.png')}}" width="600"/>
+    <!-- start: page -->
+    <section class="body-sign">
+        <div class="center-sign">
+            @if (isset($success))
+                <div class="success alert-success" style="padding-bottom:10px;">
+                    <strong>{{ $success }}</strong>
                 </div>
-                <div class="login-panel panel panel-default">
-                    <img class="visible-sm visible-xs" src="{{asset('assets_old/images/logo_large.png')}}" width="100%" style="margin-top:-80px;"/>
-                    <div style="color:white; font-weight:bold; text-align:center; font-size:18px; padding-top:20px;">{{trans('front.welcome_please_login')}}</div>
-                    <div class="panel-body">
+            @endif
 
-                        @if (isset($success))
-                            <div class="success alert-success" style="background-color:transparent; padding-bottom:10px;">
-                                <strong>{{ $success }}</strong>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger" style="">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <!--a href="/" class="logo pull-left">
+                <img src="assets/images/logo-full.png" height="54" alt="Porto Admin" />
+            </a-->
+
+            <div class="panel panel-sign">
+                <div class="panel-title-sign mt-xl text-right">
+                    <h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
+                </div>
+                <div class="panel-body">
+                    {!! Form::open(array('url'=>'login','method'=>'POST')) !!}
+                        <div class="form-group mb-lg">
+                            <label>Username</label>
+                            <div class="input-group input-group-icon">
+                                {!! Form::email('email', '', array('class'=>'form-control input-lg','placeholder'=> 'Email','tabindex'=>'1')) !!}
+                                <span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-user"></i>
+										</span>
+									</span>
                             </div>
-                        @endif
+                        </div>
 
-                        @if (count($errors) > 0)
-                            <div class="alert alert-danger" style="background-color:transparent; border:none; color:#F00;">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
+                        <div class="form-group mb-lg">
+                            <div class="clearfix">
+                                <label class="pull-left">Password</label>
+                                <a href="{{URL::route('forgot-password')}}" class="pull-right">Lost Password?</a>
                             </div>
-                        @endif
-
-                        <fieldset>
-
-                            {!! Form::open(array('url'=>'login','method'=>'POST')) !!}
-                            <div class="form-group">
-                                {!! Form::email('email', '', array('class'=>'form-control','placeholder'=>trans('front.email'),'tabindex'=>'1')) !!}
+                            <div class="input-group input-group-icon">
+                                {!! Form::password('password', array('class'=>'form-control input-lg','placeholder'=>'Password','tabindex'=>'2')) !!}
+                                <span class="input-group-addon">
+										<span class="icon icon-lg">
+											<i class="fa fa-lock"></i>
+										</span>
+									</span>
                             </div>
-
-                            <div class="form-group">
-                                {!! Form::password('password', array('class'=>'form-control','placeholder'=>trans('front.password'),'tabindex'=>'2')) !!}
+                        </div>
+                    @if ($_COOKIE['country_code'] != "CN")
+                        <div class="form-group" align="center">
+                            <div class="input-group ">
+                                {!! app('captcha')->display() !!}
                             </div>
-                            @if ($_COOKIE['country_code'] != "CN")
-                            <div class="form-group" align="center">
-                                <div class="input-group ">
-                                    {!! app('captcha')->display() !!}
+                        </div>
+                    @endif
+                        <div class="row">
+                            <div class="col-sm-8">
+                                <div class="checkbox-custom checkbox-default">
+                                    <input id="RememberMe" name="rememberme" type="checkbox"  type="checkbox" value="1"/>
+                                    <label for="RememberMe">Remember Me</label>
                                 </div>
                             </div>
-                            @endif
-                            <div class="pull-right small" style="padding-top:13px;"><a href="{{URL::route('forgot-password')}}">{{trans('front.forgot_password')}}</a></div>
-                            <div class="checkbox pull-left">
-                                <label style="color:white;">
-                                    <input name="rememberme" type="checkbox" value="1">{{trans('front.remember_me')}}
-                                </label>
+                            <div class="col-sm-4 text-right">
+                                <button type="submit" class="btn btn-primary hidden-xs">Sign In</button>
+                                <button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
                             </div>
-                            {!! Form::submit(trans('front.login'), array('class'=>'btn btn-primary btn-block')) !!}
-                            <br>
-                            <a href="{{URL::route('signup')}}" class="btn btn-default btn-block">{{trans('front.not_a_member_sign_up')}}</a>
-                            {!! Form::close() !!}
-                        </fieldset>
-                    </div>
+                        </div>
 
-                    <div class="pull-left" style="padding:15px;"><a href="{{env('SITE_URL')}}">{{trans('front.back_to_website')}}</a></div>
+                        <span class="mt-lg mb-lg line-thru text-center text-uppercase">
+								<span>or</span>
+							</span>
 
-                    <div id="polyglotLanguageSwitcher" class="front_langchooser" style="margin-right:15px;">
-                        <form id="updatelang" action="{{URL::route('set-locale')}}">
-                            <select id="polyglot-language-options">
-                                <option id="en" value="en" @if(Lang::locale() == 'en') selected @endif>English</option>
-                                <option id="cn" value="cn" @if(Lang::locale() == 'cn') selected @endif>中文</option>
-                            </select>
-                        </form>
-                    </div>
+                        <p class="text-center">Don't have an account yet? <a href="{{ url('/signup') }}">Sign Up!</a></p>
 
+                    {!! Form::close() !!}
                 </div>
             </div>
+
+            <p class="text-center text-muted mt-md mb-md">{{ env('SITE_NAME') }} &copy; Copyright {{ date('Y') }}. All Rights Reserved.</p>
         </div>
-    </div>
-    <script>
-        $('video').on('ended', function () {
-            this.load();
-            this.play();
-        });
-
-
-    </script>
-
+    </section>
+    <!-- end: page -->
 
     @Stop
