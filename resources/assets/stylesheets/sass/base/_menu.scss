@@ -1,24 +1,24 @@
 ul.nav-main {
 	margin-right: $sidebar-border-width;
 
-// PRIMARY MENU ITEM
-// -----------------------------------------------------------------------------
+	// PRIMARY MENU ITEM
+	// -----------------------------------------------------------------------------
 
 	& > li {
 
 		& > a {
 			padding: $menu-item-padding;
 
-// PRIMARY HOVER
-// -----------------------------------------------------------------------------
+			// PRIMARY HOVER
+			// -----------------------------------------------------------------------------
 			&:hover,
 			&:focus {
 				background-color: #21262d;
 			}
 		}
 
-// PRIMARY ITEM: ACTIVE
-// -----------------------------------------------------------------------------
+		// PRIMARY ITEM: ACTIVE
+		// -----------------------------------------------------------------------------
 		&.nav-active {
 			> a {
 				box-shadow: $menu-item-active-border-width 0 0 $menu-item-active-border-color inset;
@@ -34,8 +34,8 @@ ul.nav-main {
 
 		}
 
-// PRIMARY ITEM: EXPANDED
-// -----------------------------------------------------------------------------
+		// PRIMARY ITEM: EXPANDED
+		// -----------------------------------------------------------------------------
 		&.nav-expanded {
 			& > a {
 				background: #21262d;
@@ -43,9 +43,8 @@ ul.nav-main {
 		}
 	}
 
-
-// PRIMARY AND CHILDREN ITEMS
-// -----------------------------------------------------------------------------
+	// PRIMARY AND CHILDREN ITEMS
+	// -----------------------------------------------------------------------------
 	li {
 		a {
 			@include font-size(13);
@@ -80,9 +79,8 @@ ul.nav-main {
 			vertical-align: middle;
 		}
 
-
-// SUB MENU - HAS CHILDREN
-// -----------------------------------------------------------------------------
+		// SUB MENU - HAS CHILDREN
+		// -----------------------------------------------------------------------------
 		&.nav-parent {
 			position: relative;
 
@@ -102,8 +100,8 @@ ul.nav-main {
 				}
 			}
 
-// SUB MENU - HAS CHILDREN - EXPANDED
-// -----------------------------------------------------------------------------
+			// SUB MENU - HAS CHILDREN - EXPANDED
+			// -----------------------------------------------------------------------------
 			&.nav-expanded {
 
 				& > a:after {
@@ -117,8 +115,8 @@ ul.nav-main {
 
 		}
 
-// SUB MENU - CHILDREN
-// -----------------------------------------------------------------------------
+		// SUB MENU - CHILDREN
+		// -----------------------------------------------------------------------------
 		.nav-children {
 			background: $menu-item-active-background;
 			box-shadow: 0px -3px 3px -3px rgba(0, 0, 0, 0.7) inset;
@@ -139,8 +137,8 @@ ul.nav-main {
 					}
 				}
 
-//  SUB MENU - CHILDREN: ACTIVE
-// -----------------------------------------------------------------------------
+				//  SUB MENU - CHILDREN: ACTIVE
+				// -----------------------------------------------------------------------------
 				&.nav-active {
 					> a {
 						color: $color-primary;
@@ -172,4 +170,66 @@ ul.nav-main {
 
 	}
 
+}
+
+// SIDEBAR LIGHT
+// -----------------------------------------------------------------------------
+/* Sidebar Light - Menu */
+html.sidebar-light:not(.dark) {
+	ul.nav-main {
+
+		margin-top: 3px;
+
+		li {
+			a {
+				color: #777;
+			}
+		}
+
+		// PRIMARY MENU ITEM
+		// -----------------------------------------------------------------------------
+		& > li {
+
+			& > a {
+
+				// PRIMARY HOVER
+				// -----------------------------------------------------------------------------
+				&:hover,
+				&:focus {
+					background-color: #fafafa;
+				}
+			}
+
+			// PRIMARY ITEM: EXPANDED
+			// -----------------------------------------------------------------------------
+			&.nav-expanded {
+				& > a {
+					background: #fafafa;
+				}
+			}
+		}
+
+		// PRIMARY AND CHILDREN ITEMS
+		// -----------------------------------------------------------------------------
+		li {
+
+			// SUB MENU - CHILDREN
+			// -----------------------------------------------------------------------------
+			.nav-children {
+				background: #F6F6F6;
+				box-shadow: 0 -3px 3px -3px rgba(0, 0, 0, 0.1) inset;
+
+				li {
+					a {
+						&:hover, &:focus {
+							background: #F1F1F1;
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}
 }

@@ -14,7 +14,7 @@
 })(this, function() {
   var NProgress = {};
 
-  NProgress.version = '0.1.6';
+  NProgress.version = '0.2.0';
 
   var Settings = NProgress.settings = {
     minimum: 0.08,
@@ -61,7 +61,7 @@
    *     NProgress.set(1.0);
    */
 
-  NProgress.set = function(n, cbs) {
+  NProgress.set = function(n) {
     var started = NProgress.isStarted();
 
     n = clamp(n, Settings.minimum, 1);
@@ -72,10 +72,6 @@
         speed    = Settings.speed,
         ease     = Settings.easing;
 
-    if (typeof cbs === 'object' && typeof cbs.onInit === 'function') {
-      cbs.onInit.call(NProgress);
-    }
-
     progress.offsetWidth; /* Repaint */
 
     queue(function(next) {
@@ -83,19 +79,20 @@
       if (Settings.positionUsing === '') Settings.positionUsing = NProgress.getPositioningCSS();
 
       // Add transition
-      css(bar, barPositionCSS(n, speed, ease, cbs));
+      css(bar, barPositionCSS(n, speed, ease));
+
       if (n === 1) {
         // Fade out
-        css(progress, {
-          transition: 'none',
-          opacity: 1
+        css(progress, { 
+          transition: 'none', 
+          opacity: 1 
         });
         progress.offsetWidth; /* Repaint */
 
         setTimeout(function() {
-          css(progress, {
-            transition: 'all ' + speed + 'ms linear',
-            opacity: 0
+          css(progress, { 
+            transition: 'all ' + speed + 'ms linear', 
+            opacity: 0 
           });
           setTimeout(function() {
             NProgress.remove();
@@ -121,7 +118,7 @@
    *     NProgress.start();
    *
    */
-  NProgress.start = function(cbs) {
+  NProgress.start = function() {
     if (!NProgress.status) NProgress.set(0);
 
     var work = function() {
@@ -149,7 +146,7 @@
    *     NProgress.done(true);
    */
 
-  NProgress.done = function(force, cbs) {
+  NProgress.done = function(force) {
     if (!force && !NProgress.status) return this;
 
     return NProgress.inc(0.3 + 0.5 * Math.random()).set(1);
@@ -159,18 +156,18 @@
    * Increments by a random amount.
    */
 
-  NProgress.inc = function(amount, cbs) {
+  NProgress.inc = function(amount) {
     var n = NProgress.status;
 
     if (!n) {
-      return NProgress.start(cbs);
+      return NProgress.start();
     } else {
       if (typeof amount !== 'number') {
         amount = (1 - n) * clamp(Math.random() * n, 0.1, 0.95);
       }
 
       n = clamp(n + amount, 0, 0.994);
-      return NProgress.set(n, cbs);
+      return NProgress.set(n);
     }
   };
 
@@ -188,11 +185,11 @@
     var initial = 0, current = 0;
 
     NProgress.promise = function($promise) {
-      if (!$promise || $promise.state() == "resolved") {
+      if (!$promise || $promise.state() === "resolved") {
         return this;
       }
 
-      if (current == 0) {
+      if (current === 0) {
         NProgress.start();
       }
 
@@ -201,7 +198,7 @@
 
       $promise.always(function() {
         current--;
-        if (current == 0) {
+        if (current === 0) {
             initial = 0;
             NProgress.done();
         } else {
@@ -223,7 +220,7 @@
     if (NProgress.isRendered()) return document.getElementById('nprogress');
 
     addClass(document.documentElement, 'nprogress-busy');
-
+    
     var progress = document.createElement('div');
     progress.id = 'nprogress';
     progress.innerHTML = Settings.template;
@@ -232,7 +229,7 @@
         perc     = fromStart ? '-100' : toBarPerc(NProgress.status || 0),
         parent   = document.querySelector(Settings.parent),
         spinner;
-
+    
     css(bar, {
       transition: 'all 0 linear',
       transform: 'translate3d(' + perc + '%,0,0)'
@@ -257,7 +254,7 @@
 
   NProgress.remove = function() {
     removeClass(document.documentElement, 'nprogress-busy');
-    removeClass(document.querySelector(Settings.parent), 'nprogress-custom-parent')
+    removeClass(document.querySelector(Settings.parent), 'nprogress-custom-parent');
     var progress = document.getElementById('nprogress');
     progress && removeElement(progress);
   };
@@ -321,7 +318,7 @@
    * position given an n percentage, and speed and ease from Settings
    */
 
-  function barPositionCSS(n, speed, ease, cbs) {
+  function barPositionCSS(n, speed, ease) {
     var barCSS;
 
     if (Settings.positionUsing === 'translate3d') {
@@ -334,12 +331,6 @@
 
     barCSS.transition = 'all '+speed+'ms '+ease;
 
-    setTimeout(function() {
-      if (typeof cbs === 'object' && typeof cbs.onFinish === 'function') {
-        cbs.onFinish.call(NProgress);
-      }
-    }, speed);
-
     return barCSS;
   }
 
@@ -349,7 +340,7 @@
 
   var queue = (function() {
     var pending = [];
-
+    
     function next() {
       var fn = pending.shift();
       if (fn) {
@@ -364,10 +355,10 @@
   })();
 
   /**
-   * (Internal) Applies css properties to an element, similar to the jQuery
+   * (Internal) Applies css properties to an element, similar to the jQuery 
    * css method.
    *
-   * While this helper does assist with vendor prefixed property names, it
+   * While this helper does assist with vendor prefixed property names, it 
    * does not perform any manipulation of values prior to setting styles.
    */
 
@@ -408,7 +399,7 @@
 
     return function(element, properties) {
       var args = arguments,
-          prop,
+          prop, 
           value;
 
       if (args.length == 2) {
@@ -439,7 +430,7 @@
     var oldList = classList(element),
         newList = oldList + name;
 
-    if (hasClass(oldList, name)) return;
+    if (hasClass(oldList, name)) return; 
 
     // Trim the opening space.
     element.className = newList.substring(1);
@@ -463,8 +454,8 @@
   }
 
   /**
-   * (Internal) Gets a space separated list of the class names on the element.
-   * The list is wrapped with a single space on each end to facilitate finding
+   * (Internal) Gets a space separated list of the class names on the element. 
+   * The list is wrapped with a single space on each end to facilitate finding 
    * matches within the list.
    */
 
@@ -482,3 +473,4 @@
 
   return NProgress;
 });
+

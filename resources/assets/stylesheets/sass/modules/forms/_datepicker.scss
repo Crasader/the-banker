@@ -109,62 +109,64 @@
 }
 
 /* Datepicker - Skin Dark */
-.datepicker.datepicker-dark {
-	background: #33363F;
+html:not(.sidebar-light) {
+	.datepicker.datepicker-dark {
+		background: transparent;
 
-	table {
-		thead {
-			tr {
-				th {
-					&.datepicker-switch {
-						color: $color-primary-inverse;
-					}
+		table {
+			thead {
+				tr {
+					th {
+						&.datepicker-switch {
+							color: $color-primary-inverse;
+						}
 
-					&.dow {
-						color: $color-default-inverse;
+						&.dow {
+							color: $color-default-inverse;
+						}
 					}
 				}
 			}
-		}
 
-		tbody {
-			tr {
-				td {
-					span.old,
-					span.new {
-						color: #444;
-
-						&:hover {
-							color: $color-primary-inverse;
-						}
-					}
-
-					&.day {
-						color: $color-primary-inverse;
-
-						&:hover {
-							background: $color-primary;
-							color: $color-primary-inverse;
-						}
-
-						&.active {
-							background: darken( $color-primary, 10% );
-							color: $color-primary-inverse;
-						}
-
-						&.new {
-							color: $color-default-inverse;
+			tbody {
+				tr {
+					td {
+						span.old,
+						span.new {
+							color: #444;
 
 							&:hover {
 								color: $color-primary-inverse;
+							}
+						}
+
+						&.day {
+							color: $color-primary-inverse;
+
+							&:hover {
+								background: $color-primary;
+								color: $color-primary-inverse;
+							}
+
+							&.active {
+								background: darken( $color-primary, 10% );
+								color: $color-primary-inverse;
+							}
+
+							&.new {
+								color: $color-default-inverse;
+
+								&:hover {
+									color: $color-primary-inverse;
+								}
 							}
 						}
 					}
 				}
 			}
 		}
-	}
 
+	}
 }
 
 /* Datepicker - Skin Primary */

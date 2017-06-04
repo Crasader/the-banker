@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html class="fixed">
 <head>
+    <!-- Basic -->
+    <meta charset="UTF-8">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="keywords" content="Member dashboard" />
+    <meta name="description" content="Member dashboard">
+    <meta name="author" content="{{ env('SITE_URL') }}">
 
-    <title>{{env('SITE_NAME')}} | @yield('title')</title>
+    <title>{{env('SITE_NAME')}} &bull; @yield('title')</title>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <link href="{{asset('assets_old/bower_components/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+
+    <link href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
     <link href="{{asset('assets_old/bower_components/metisMenu/dist/metisMenu.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets_old/dist/css/front.css')}}" rel="stylesheet">
     <link href="{{asset('assets_old/bower_components/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">

@@ -191,7 +191,7 @@ html.dark {
 	.table > tbody > tr.#{nth($state,1)} > th,
 	.table > tfoot > tr.#{nth($state,1)} > th {
 		color: #FFF;
-		background-color: nth($state,2);
+		background-color: nth($state,2) !important;
 	}
 }
 

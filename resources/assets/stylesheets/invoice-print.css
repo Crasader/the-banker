@@ -10,46 +10,57 @@ h3,
 
 h1,
 .h1 {
-	font-size: 36px;
 	font-size: 3.6rem;
 }
 
 h2,
 .h2 {
-	font-size: 30px;
 	font-size: 3rem;
 }
 
 h3,
 .h3 {
-	font-size: 24px;
 	font-size: 2.4rem;
 }
 
 h4,
 .h4 {
-	font-size: 18px;
 	font-size: 1.8rem;
 }
 
 h5,
 .h5 {
-	font-size: 14px;
 	font-size: 1.4rem;
 }
 
 h6,
 .h6 {
-	font-size: 12px;
 	font-size: 1.2rem;
 	letter-spacing: 0;
 }
 
 /* Alternative Font Style */
 .alternative-font {
-	color: #cccccc;
+	color: #CCC;
 	font-family: "Shadows Into Light", cursive;
 	font-size: 1.6em;
+}
+
+/* Shadow Style 1 */
+.shadow-style-1 {
+	box-shadow: 10px 10px 74px -15px rgba(74, 74, 74, 0.1);
+	-webkit-transition: ease box-shadow 300ms;
+	-moz-transition: ease box-shadow 300ms;
+	transition: ease box-shadow 300ms;
+}
+
+.shadow-style-1:hover {
+	box-shadow: 10px 10px 74px -15px rgba(74, 74, 74, 0.4);
+}
+
+/* Shadow Style 2 */
+.shadow-style-2 {
+	box-shadow: 10px 10px 74px -15px rgba(74, 74, 74, 0.4);
 }
 
 /* Drop Caps */
@@ -64,7 +75,7 @@ p.drop-caps:first-child:first-letter {
 	color: #171717;
 }
 
-p.drop-caps.secundary:first-child:first-letter {
+p.drop-caps.secondary:first-child:first-letter {
 	background-color: #171717;
 	color: #FFF;
 	padding: 6px;
@@ -73,11 +84,11 @@ p.drop-caps.secundary:first-child:first-letter {
 }
 
 p.drop-caps.colored:first-child:first-letter {
-	color: #cccccc;
+	color: #CCC;
 }
 
-p.drop-caps.colored.secundary:first-child:first-letter {
-	background-color: #cccccc;
+p.drop-caps.colored.secondary:first-child:first-letter {
+	background-color: #CCC;
 	color: #FFF;
 }
 
@@ -88,7 +99,7 @@ blockquote {
 
 /* Hightlight */
 .highlight {
-	background-color: #cccccc;
+	background-color: #CCC;
 	color: #FFF;
 	padding: 3px 6px;
 }
@@ -192,6 +203,14 @@ body a, body a:focus, body a:hover, body a:active, body a:visited {
 	text-align: center;
 }
 
+.popover .btn {
+	margin-right: 5px;
+}
+
+.popover .btn:last-child {
+	margin-right: 0;
+}
+
 ul,
 ol {
 	margin-bottom: 0;
@@ -199,7 +218,7 @@ ol {
 }
 
 blockquote.primary {
-	border-color: #cccccc;
+	border-color: #CCC;
 }
 
 blockquote.success {
@@ -223,39 +242,39 @@ blockquote.dark {
 }
 
 .well.primary {
-	background: #cccccc;
+	background: #CCC;
 	border-color: #b3b3b3;
-	color: white;
+	color: #FFF;
 }
 
 .well.success {
 	background: #47a447;
 	border-color: #388038;
-	color: white;
+	color: #FFF;
 }
 
 .well.warning {
 	background: #ed9c28;
 	border-color: #d18211;
-	color: white;
+	color: #FFF;
 }
 
 .well.danger {
 	background: #d2322d;
 	border-color: #a82824;
-	color: white;
+	color: #FFF;
 }
 
 .well.info {
 	background: #5bc0de;
 	border-color: #31b0d5;
-	color: white;
+	color: #FFF;
 }
 
 .well.dark {
 	background: #171717;
 	border-color: black;
-	color: white;
+	color: #FFF;
 }
 
 /* Arrows */
@@ -265,6 +284,10 @@ blockquote.dark {
 	height: 120px;
 	display: inline-block;
 	position: relative;
+}
+
+.arrow.arrow-light {
+	background-image: url(../images/arrows-dark.png);
 }
 
 .arrow.vtl {
@@ -407,6 +430,7 @@ ul.nav-list.primary > li a {
 	padding: 0 37px 0 0;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	outline: none;
 }
 
 .scrollable .scrollable-content::-webkit-scrollbar {
@@ -597,7 +621,7 @@ html.dark .table .actions-hover a {
 .table > tbody > tr.primary > th,
 .table > tfoot > tr.primary > th {
 	color: #FFF;
-	background-color: #cccccc;
+	background-color: #CCC !important;
 }
 
 .table > thead > tr > td.success,
@@ -613,7 +637,7 @@ html.dark .table .actions-hover a {
 .table > tbody > tr.success > th,
 .table > tfoot > tr.success > th {
 	color: #FFF;
-	background-color: #47a447;
+	background-color: #47a447 !important;
 }
 
 .table > thead > tr > td.warning,
@@ -629,7 +653,7 @@ html.dark .table .actions-hover a {
 .table > tbody > tr.warning > th,
 .table > tfoot > tr.warning > th {
 	color: #FFF;
-	background-color: #ed9c28;
+	background-color: #ed9c28 !important;
 }
 
 .table > thead > tr > td.danger,
@@ -645,7 +669,7 @@ html.dark .table .actions-hover a {
 .table > tbody > tr.danger > th,
 .table > tfoot > tr.danger > th {
 	color: #FFF;
-	background-color: #d2322d;
+	background-color: #d2322d !important;
 }
 
 .table > thead > tr > td.info,
@@ -661,7 +685,7 @@ html.dark .table .actions-hover a {
 .table > tbody > tr.info > th,
 .table > tfoot > tr.info > th {
 	color: #FFF;
-	background-color: #5bc0de;
+	background-color: #5bc0de !important;
 }
 
 .table > thead > tr > td.dark,
@@ -677,7 +701,7 @@ html.dark .table .actions-hover a {
 .table > tbody > tr.dark > th,
 .table > tfoot > tr.dark > th {
 	color: #FFF;
-	background-color: #171717;
+	background-color: #171717 !important;
 }
 
 .table > thead > tr > td.dark,
@@ -693,7 +717,7 @@ html.dark .table .actions-hover a {
 .table > tbody > tr.dark > th,
 .table > tfoot > tr.dark > th {
 	background-color: #4a4a4a;
-	color: white;
+	color: #FFF;
 }
 
 /* Invoice */

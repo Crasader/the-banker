@@ -1,6 +1,7 @@
 // COMMON IMPORTS
 // -----------------------------------------------------------------------------
 @import "config/imports";
+$admin-ext: true;
 
 // BASIC
 // -----------------------------------------------------------------------------
@@ -33,6 +34,7 @@
 @import "modules/forms/bs-colorpicker";
 @import "modules/forms/bs-multiselect";
 @import "modules/forms/spinner";
+@import "modules/forms/dropzone";
 @import "modules/forms/form-group-invisible";
 @import "modules/forms/codemirror";
 

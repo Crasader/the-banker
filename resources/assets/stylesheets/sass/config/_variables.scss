@@ -12,7 +12,7 @@ $grid-gutter-width: 30px;
 // TYPOGRAPHY
 // =============================================================================
 $font-primary: "Open Sans", Arial, sans-serif;
-$font-secundary: "Shadows Into Light", cursive;
+$font-secondary: "Shadows Into Light", cursive;
 
 $root-font-size: 10;
 $body-font-size: 13;
@@ -31,6 +31,7 @@ $font-weight-light: 300;
 $font-weight-normal: 400;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
+$font-weight-extrabold: 900;
 
 // spacement
 $spacement-increment: 5px;
@@ -75,8 +76,8 @@ $color-secondary-inverse: #FFF;
 $color-tertiary: #2BAAB1;
 $color-tertiary-inverse: #FFF;
 
-$color-quartenary: #734BA9;
-$color-quartenary-inverse: #FFF;
+$color-quaternary: #734BA9;
+$color-quaternary-inverse: #FFF;
 
 $color-dark: #171717;
 $color-dark-inverse: #FFF;
@@ -87,7 +88,7 @@ $sidebar-color: #33363F;
 $color-black: #333;
 
 // colors list
-$colors-list: (primary $color-primary $color-primary-inverse) (secondary $color-secondary $color-secondary-inverse) (tertiary $color-tertiary $color-tertiary-inverse) (quartenary $color-quartenary $color-quartenary-inverse) (success $color-success $color-success-inverse) (warning $color-warning $color-warning-inverse) (danger $color-danger $color-danger-inverse) (info $color-info $color-info-inverse) (dark $color-dark $color-dark-inverse);
+$colors-list: (primary $color-primary $color-primary-inverse) (secondary $color-secondary $color-secondary-inverse) (tertiary $color-tertiary $color-tertiary-inverse) (quaternary $color-quaternary $color-quaternary-inverse) (success $color-success $color-success-inverse) (warning $color-warning $color-warning-inverse) (danger $color-danger $color-danger-inverse) (info $color-info $color-info-inverse) (dark $color-dark $color-dark-inverse);
 
 // states list
 $states: (primary $color-primary $color-primary-inverse) (success $color-success $color-success-inverse) (warning $color-warning $color-warning-inverse) (danger $color-danger $color-danger-inverse) (info $color-info $color-info-inverse) (dark $color-dark $color-dark-inverse);
@@ -442,3 +443,8 @@ $tabs-border-color: #EEE;
 
 	// box shadow
 	$form-control-box-shadow: inset 0 1px 1px rgba(#000,.075), 0 0 8px rgba($form-control-border-color, 0.6);
+
+// =============================================================================
+// ADMIN EXTENSION
+// =============================================================================
+$admin-ext: false;

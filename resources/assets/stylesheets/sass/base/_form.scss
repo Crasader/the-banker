@@ -84,6 +84,12 @@ select {
 	}
 }
 
+.bootstrap-timepicker-widget {
+	input {
+		border: 0;
+	}
+}
+
 // CUSTOM FIELDS
 // -----------------------------------------------------------------------------
 /* Form - Custom Fields */
@@ -726,6 +732,22 @@ div.validation-message ul {
 
 .select2-search {
     z-index: 10012;
+}
+
+.select2-container--bootstrap.select2-container--open {
+	z-index: 10013;
+}
+
+@media (max-width: 991px) {
+	.select2-container--bootstrap {
+		width: auto !important;
+	}
+}
+
+// MAXLENGTH FIX
+// -----------------------------------------------------------------------------
+.bootstrap-maxlength {
+	z-index: 999999 !important;
 }
 
 // DARK - FILE UPLOAD

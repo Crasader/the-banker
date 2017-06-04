@@ -59,6 +59,18 @@
 	}
 }
 
+@media only screen and (max-width: 767px) {
+	.userbox {
+		.name,
+		.role {
+			max-width: 68px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
+}
+
 // USERBOX OPENED
 // -----------------------------------------------------------------------------
 /* Userbox - Open */

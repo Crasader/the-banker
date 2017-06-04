@@ -67,6 +67,10 @@
 				text-decoration: none;
 				color: $wizard-nav-default-color;
 
+				.badge {
+					border-radius: 100%;
+				}
+
 				&,
 				&:hover {
 					background: $wizard-nav-item-background;
@@ -238,7 +242,6 @@ html.dark {
 				line-height: 1;
 				text-align: center;
 				text-decoration: none;
-				word-break: break-all;
 
 				span {
 					position: absolute;
@@ -495,6 +498,10 @@ html.dark {
 			a {
 				cursor: not-allowed;
 			}
+		}
+
+		.next.disabled {
+			display: none;
 		}
 	}
 }

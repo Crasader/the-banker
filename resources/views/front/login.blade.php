@@ -1,5 +1,5 @@
 @extends('front.default')
-@section('title'){{trans('front.login')}} @Stop
+@section('title')Login @Stop
 @section('content')
 
     <div class="fullscreen-bg">

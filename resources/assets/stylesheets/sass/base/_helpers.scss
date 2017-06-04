@@ -20,6 +20,10 @@
 	@include font-size( 22 );
 }
 
+.text-xlg {
+	@include font-size( 24 );
+}
+
 // STATES
 // -----------------------------------------------------------------------------
 .text-muted {
@@ -63,6 +67,10 @@ html.dark {
 	font-weight: $font-weight-bold;
 }
 
+.text-weight-extrabold {
+	font-weight: $font-weight-extrabold;
+}
+
 // TEXT OTHERS
 // -----------------------------------------------------------------------------
 .text-uppercase {
@@ -93,6 +101,18 @@ html.dark {
 
 .b-thick {
 	border-width: $border-thick;
+}
+
+.b-none {
+	border: none !important;
+}
+
+// LISTS
+// -----------------------------------------------------------------------------
+.list-style-none {
+	> li {
+		list-style: none !important;
+	}
 }
 
 // SPACEMENTS
@@ -190,7 +210,7 @@ html.dark {
 }
 
 /* spacement left  */
-.mr-none {
+.ml-none {
 	margin-left: 0 !important;
 }
 
@@ -335,7 +355,7 @@ html.dark {
 }
 
 /* spacement left  */
-.pr-none {
+.pl-none {
 	padding-left: 0 !important;
 }
 
@@ -413,6 +433,14 @@ html.dark {
 
 // BG STATES
 // -----------------------------------------------------------------------------
+.bg-none {
+	background: none !important;
+}
+
+.bg-light {
+	background-color: #FFF;
+}
+
 .bg-default {
 	background: $color-default;
 	color: $color-default-inverse;
@@ -423,4 +451,10 @@ html.dark {
 		background: #{nth($color,2)};
 		color: #{nth($color,3)};
 	}
+}
+
+/* Container */
+.container-xl {
+	width: 100%;
+	max-width: 1630px;
 }

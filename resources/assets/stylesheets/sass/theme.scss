@@ -7,6 +7,7 @@
 @import "base/skeleton";
 @import "base/bootstrap_extend";
 @import "base/header";
+@import "base/tab_navigation";
 @import "base/sidebar_left";
 @import "base/sidebar_left_sizing";
 @import "base/sidebar_right";
@@ -18,6 +19,7 @@
 @import "base/form";
 @import "base/nanoscroll";
 @import "base/toolbar";
+@import "base/call_to_action";
 
 // GUI
 // -----------------------------------------------------------------------------
@@ -71,11 +73,15 @@
 @import "modules/forms/bs-colorpicker";
 @import "modules/forms/bs-multiselect";
 @import "modules/forms/spinner";
+@import "modules/forms/dropzone";
 @import "modules/forms/form-group-invisible";
 @import "modules/forms/codemirror";
 @import "modules/maps/gmaps";
 @import "modules/maps/jqvmap";
 
+// DASHBOARD
+// -----------------------------------------------------------------------------
+@import "modules/dashboard/index-landing";
 
 // MAILBOX
 // -----------------------------------------------------------------------------

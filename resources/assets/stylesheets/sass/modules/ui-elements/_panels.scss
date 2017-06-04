@@ -1,19 +1,15 @@
 // PANEL
 // -----------------------------------------------------------------------------
-.panel {
+.panel#{if($admin-ext, '.panel-admin', '')} {
 	background: transparent;
 	-webkit-box-shadow: none;
 			box-shadow: none;
 	border: none;
-	/* WHY?
-	+ .panel {
-		margin-top: 35px;
-	}*/
 }
 
 // PANEL HEADING
 // -----------------------------------------------------------------------------
-.panel-heading {
+#{if($admin-ext, '.panel-admin ', '')}.panel-heading {
 	background: $panel-heading-background;
 	border-radius: $border-radius $border-radius 0 0;
 	border-bottom: 1px solid #DADADA;
@@ -23,7 +19,7 @@
 
 // PANEL HEADING BGS
 // -----------------------------------------------------------------------------
-.panel-heading {
+#{if($admin-ext, '.panel-admin ', '')}.panel-heading {
 	@each $color in $colors-list {
 		&.bg-#{nth($color,1)} {
 			background: #{nth($color,2)};
@@ -34,7 +30,7 @@
 	}
 }
 
-.panel-heading.bg-white {
+#{if($admin-ext, '.panel-admin ', '')}.panel-heading.bg-white {
 	background: #fff;
 	border-bottom: 0 none;
 	border-right: 0 none;
@@ -42,7 +38,7 @@
 
 // PANEL ACTIONS
 // -----------------------------------------------------------------------------
-.panel-actions {
+#{if($admin-ext, '.panel-admin ', '')}.panel-actions {
 	right: 15px;
 	position: absolute;
 	top: 15px;
@@ -76,7 +72,7 @@
 
 // PANEL TITLE AND SUBTITLE
 // -----------------------------------------------------------------------------
-.panel-title {
+#{if($admin-ext, '.panel-admin ', '')}.panel-title {
 	color: $panel-title-color;
 	font-size: $panel-title-size;
 	font-weight: $font-weight-normal;
@@ -85,7 +81,7 @@
 	text-transform: none;
 }
 
-.panel-subtitle {
+#{if($admin-ext, '.panel-admin ', '')}.panel-subtitle {
 	color: $panel-subtitle-color;
 	font-size: $panel-subtitle-size;
 	line-height: 1.2em;
@@ -95,30 +91,30 @@
 
 // PANEL BODY
 // -----------------------------------------------------------------------------
-.panel-body {
+#{if($admin-ext, '.panel-admin ', '')}.panel-body {
 	background: #fdfdfd;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 	border-radius: $border-radius;
 }
 
-.panel-body-nopadding {
+#{if($admin-ext, '.panel-admin ', '')}.panel-body-nopadding {
 	padding: 0;
 }
 
-.panel-heading + .panel-body {
+#{if($admin-ext, '.panel-admin ', '')}.panel-heading + .panel-body {
 	border-radius: 0 0 $border-radius $border-radius;
 }
 
 
 // PANEL FOOTER
 // -----------------------------------------------------------------------------
-.panel-footer {
+#{if($admin-ext, '.panel-admin ', '')}.panel-footer {
 	border-radius: 0 0 $border-radius $border-radius;
 	margin-top: -$border-radius;
 }
 
-.panel-footer-btn-group {
+#{if($admin-ext, '.panel-admin ', '')}.panel-footer-btn-group {
 	display: table;
 	width: 100%;
 	padding: 0;
@@ -144,7 +140,7 @@
 
 // PANEL BODY BGS
 // -----------------------------------------------------------------------------
-.panel-body {
+#{if($admin-ext, '.panel-admin ', '')}.panel-body {
 	@each $color in $colors-list {
 		&.bg-#{nth($color,1)} {
 			background: #{nth($color,2)};
@@ -155,7 +151,7 @@
 
 // PANEL FEATURED
 // -----------------------------------------------------------------------------
-.panel-featured {
+.panel-featured#{if($admin-ext, '.panel-admin', '')} {
 	border-top: $panel-featured-border-width solid $panel-title-color;
 
 	.panel-heading {
@@ -181,7 +177,7 @@
 
 // PANEL HIGHLIGHT
 // -----------------------------------------------------------------------------
-.panel-highlight {
+.panel-highlight#{if($admin-ext, '.panel-admin', '')} {
 
 	.panel-heading {
 		background-color: $color-primary;
@@ -210,7 +206,7 @@
 
 }
 
-.panel-highlight-title {
+#{if($admin-ext, '.panel-admin ', '')}.panel-highlight-title {
 
 	.panel-heading {
 		background-color: #2BAAB1;
@@ -233,7 +229,7 @@
 }
 // PANEL HEADING ICON
 // -----------------------------------------------------------------------------
-.panel-heading-icon {
+#{if($admin-ext, '.panel-admin ', '')}.panel-heading-icon {
 	margin: 0 auto;
 	@include font-size(42);
 	width: 90px;
@@ -246,7 +242,7 @@
 	border-radius: 55px;
 }
 
-.panel-heading-icon {
+#{if($admin-ext, '.panel-admin ', '')}.panel-heading-icon {
 	@each $color in $colors-list {
 		&.bg-#{nth($color,1)} {
 			background: #{nth($color,2)};
@@ -257,7 +253,7 @@
 
 // PANEL HEADING PROFILE PICTURE
 // -----------------------------------------------------------------------------
-.panel-heading-profile-picture {
+#{if($admin-ext, '.panel-admin ', '')}.panel-heading-profile-picture {
 	img {
 		display: block;
 		margin: 0 auto;
@@ -271,7 +267,7 @@
 
 // PANEL ICON
 // -----------------------------------------------------------------------------
-.panel-icon {
+#{if($admin-ext, '.panel-admin ', '')}.panel-icon {
 	color: #fff;
 	font-size: 42px;
 	float: left;
@@ -286,12 +282,12 @@
 // -----------------------------------------------------------------------------
 /* Dark - Panels */
 html.dark {
-	.panel-heading {
+	#{if($admin-ext, '.panel-admin ', '')}.panel-heading {
 		background: $dark-color-3;
 		border-bottom-color: darken( $dark-color-3, 5% );
 	}
 
-	.panel-actions {
+	#{if($admin-ext, '.panel-admin ', '')}.panel-actions {
 		a {
 			&:hover {
 				background-color: darken( $dark-color-3, 2% );
@@ -299,11 +295,11 @@ html.dark {
 		}
 	}
 
-	.panel-body {
+	#{if($admin-ext, '.panel-admin ', '')}.panel-body {
 		background: $dark-color-4;
 	}
 
-	.panel-footer {
+	#{if($admin-ext, '.panel-admin ', '')}.panel-footer {
 		background: $dark-color-5;
 		border-top-color: darken( $dark-color-3, 7% );
 	}
@@ -351,7 +347,7 @@ html.dark {
 	}
 }
 
-html .panel-transparent {
+html .panel-transparent#{if($admin-ext, '.panel-admin', '')} {
 	> .panel-heading {
 		@include panel-heading-transparent();
 	}
@@ -364,13 +360,13 @@ html .panel-transparent {
 	}
 }
 
-html .panel .panel-heading-transparent {
+html .panel#{if($admin-ext, '.panel-admin', '')} .panel-heading-transparent {
 	@include panel-heading-transparent();
 }
 
 // PANEL HORIZONTAL
 // -----------------------------------------------------------------------------
-.panel-horizontal {
+.panel-horizontal#{if($admin-ext, '.panel-admin', '')} {
 	display: table;
 	width: 100%;
 
@@ -397,8 +393,8 @@ html .panel .panel-heading-transparent {
 
 // ACTIONS
 // -----------------------------------------------------------------------------
-.panel-action-toggle,
-.panel-action-dismiss {
+#{if($admin-ext, '.panel-admin ', '')}.panel-action-toggle,
+#{if($admin-ext, '.panel-admin ', '')}.panel-action-dismiss {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	font-size: inherit;
@@ -407,7 +403,7 @@ html .panel .panel-heading-transparent {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.panel-action-toggle {
+#{if($admin-ext, '.panel-admin ', '')}.panel-action-toggle {
 	&:before {
 		content: "\f0d7";
 	}
@@ -419,7 +415,7 @@ html .panel .panel-heading-transparent {
 	}
 }
 
-.panel-action-dismiss {
+#{if($admin-ext, '.panel-admin ', '')}.panel-action-dismiss {
 	&:before {
 		content: "\f00d";
 	}
@@ -437,7 +433,7 @@ html .panel .panel-heading-transparent {
 // RESPONSIVE
 // -----------------------------------------------------------------------------
 @media only screen and (max-width: 767px) {
-	.panel-actions {
+	#{if($admin-ext, '.panel-admin ', '')}.panel-actions {
 		float: none;
 		margin-bottom: 15px;
 		position: static;

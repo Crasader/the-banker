@@ -18,6 +18,9 @@ html.dark {
 	body {
 		color: $dark-default-text;
 	}
+	.hidden-on-dark {
+		display: none !important;
+	}
 }
 
 // ELEMENTS

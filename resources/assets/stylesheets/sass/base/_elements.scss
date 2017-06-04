@@ -44,8 +44,22 @@ h6,
 /* Alternative Font Style */
 .alternative-font {
 	color: $color-primary;
-	font-family: $font-secundary;
+	font-family: $font-secondary;
 	font-size: 1.6em;
+}
+
+/* Shadow Style 1 */
+.shadow-style-1 {
+	box-shadow: 10px 10px 74px -15px rgba(74, 74, 74, 0.1);
+	@include transition(ease box-shadow 300ms);
+	&:hover {
+		box-shadow: 10px 10px 74px -15px rgba(74, 74, 74, 0.4);
+	}
+}
+
+/* Shadow Style 2 */
+.shadow-style-2 {
+	box-shadow: 10px 10px 74px -15px rgba(74, 74, 74, 0.4);
 }
 
 /* Drop Caps */
@@ -60,7 +74,7 @@ p.drop-caps {
 		font-family: Georgia;
 		color: $color-dark;
 	}
-	&.secundary:first-child:first-letter {
+	&.secondary:first-child:first-letter {
 		background-color: $color-dark;
 		color: #FFF;
 		padding: 6px;
@@ -70,7 +84,7 @@ p.drop-caps {
 	&.colored:first-child:first-letter {
 		color: $color-primary;
 	}
-	&.colored.secundary:first-child:first-letter {
+	&.colored.secondary:first-child:first-letter {
 		background-color: $color-primary;
 		color: #FFF;
 	}
@@ -191,6 +205,15 @@ body a {
 	text-align: center;
 }
 
+.popover {
+	.btn {
+		margin-right: 5px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
 // LISTS
 // -----------------------------------------------------------------------------
 ul,
@@ -224,6 +247,9 @@ ol {
 	height: 120px;
 	display: inline-block;
 	position: relative;
+	&.arrow-light {
+		background-image: url(../images/arrows-dark.png);
+	}
 	&.vtl {
 		background-position: 0 0;
 		width: 47px;
@@ -364,6 +390,7 @@ ul.nav-list.primary > li {
 		padding: 0 37px 0 0;
 		overflow-x: hidden;
 		overflow-y: scroll;
+		outline: none;
 
 		&::-webkit-scrollbar {
 			visibility: hidden;

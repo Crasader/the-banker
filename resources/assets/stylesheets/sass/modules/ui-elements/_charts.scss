@@ -246,7 +246,7 @@
 		.multiselect {
 			background: $panel-heading-background;
 			border: 0 none;
-			font-size: $panel-title-size;
+			font-size: 18px;
 			font-weight: 600;
 			margin: -4px 0 0 4px !important;
 			padding: 3px 12px 3px 8px;
@@ -370,24 +370,24 @@
 .ct-chart .ct-series.ct-series-g .ct-line,
 .ct-chart .ct-series.ct-series-g .ct-point,
 .ct-chart .ct-series.ct-series-g .ct-slice.ct-donut {
-	stroke: $color-quartenary;
+	stroke: $color-quaternary;
 }
 
 .ct-chart .ct-series.ct-series-g .ct-area,
 .ct-chart .ct-series.ct-series-g .ct-slice:not(.ct-donut) {
-	fill: $color-quartenary;
+	fill: $color-quaternary;
 }
 
 .ct-chart .ct-series.ct-series-h .ct-bar,
 .ct-chart .ct-series.ct-series-h .ct-line,
 .ct-chart .ct-series.ct-series-h .ct-point,
 .ct-chart .ct-series.ct-series-h .ct-slice.ct-donut {
-	stroke: darken($color-quartenary, 15%);
+	stroke: darken($color-quaternary, 15%);
 }
 
 .ct-chart .ct-series.ct-series-h .ct-area,
 .ct-chart .ct-series.ct-series-h .ct-slice:not(.ct-donut) {
-	fill: darken($color-quartenary, 15%);
+	fill: darken($color-quaternary, 15%);
 }
 
 .ct-chart .ct-series.ct-series-i .ct-bar,
@@ -442,12 +442,12 @@
 .ct-chart .ct-series.ct-series-m .ct-line,
 .ct-chart .ct-series.ct-series-m .ct-point,
 .ct-chart .ct-series.ct-series-m .ct-slice.ct-donut {
-	stroke: lighten($color-quartenary, 15%);
+	stroke: lighten($color-quaternary, 15%);
 }
 
 .ct-chart .ct-series.ct-series-m .ct-area,
 .ct-chart .ct-series.ct-series-m .ct-slice:not(.ct-donut) {
-	fill: lighten($color-quartenary, 15%);
+	fill: lighten($color-quaternary, 15%);
 }
 
 .ct-chart .ct-series.ct-series-n .ct-bar,

@@ -2,7 +2,10 @@
 // -----------------------------------------------------------------------------
 /* Summernote */
 .note-editor {
-	border: 1px solid #ddd;
+	&, &.note-frame {
+		border: 1px solid #ddd;
+	}
+
 	border-radius: 4px;
 
 	@include transition( border-color ease-in-out .15s, box-shadow ease-in-out .15s );
@@ -17,7 +20,7 @@
 	}
 
 	.note-toolbar {
-		background-color: #FFF;
+		background-color: #f5f5f5;
 		border: {
 			bottom: 1px dashed #ddd;
 			left: none;
@@ -25,7 +28,7 @@
 			top: none;
 		}
 		border-radius: 4px 4px 0 0;
-		padding: 6px 4px 0;
+		padding: 3px 10px 7px;
 		-webkit-user-select: none;
 		-moz-user-select: none;
 		-ms-user-select: none;
@@ -41,7 +44,17 @@
 
 		.btn-group {
 			float: none !important;
-			margin: 0 0 6px 5px;
+
+			> .btn-group:last-child > .btn:first-child {
+				border-bottom-left-radius: 3px;
+				border-top-left-radius: 3px;
+			}
+
+			> .btn-group:first-child > .btn:last-child,
+			> .btn-group:first-child > .dropdown-toggle {
+				border-bottom-right-radius: 3px;
+				border-top-right-radius: 3px;
+			}
 		}
 
 		@media only screen and (max-width: 767px) {
@@ -94,6 +107,10 @@ html.dark {
 			.note-icon-bar {
 				border-color: #444;
 			}
+		}
+
+		.note-editing-area .note-editable {
+			color: #EEE;
 		}
 
 		.caret {

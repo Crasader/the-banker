@@ -1,4 +1,4 @@
-<nav id="menu" class="nav-main" role="navigation">
+<nav id="menu" class="nav-main sidebar-light" role="navigation">
     <ul class="nav nav-main">
 
 

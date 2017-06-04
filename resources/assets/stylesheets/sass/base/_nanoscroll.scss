@@ -77,14 +77,49 @@ html.no-overflowscrolling {
 			}
 		}
 	}
+
+	.sidebar-left {
+		.nano {
+			background: $sidebar-background;
+			box-shadow: -$sidebar-border-width 0 0 $sidebar-border-color inset;
+		}
+	}
+
+}
+
+html.no-overflowscrolling.sidebar-light:not(.dark) {
+	.sidebar-left {
+		.nano {
+			background: #FFF;
+			box-shadow: -$sidebar-border-width 0 0 #F6F6F6 inset;
+		}
+	}
+
+	.sidebar-right {
+		.nano {
+			background: #F6F6F6;
+			box-shadow: -$sidebar-border-width 0 0 #F6F6F6 inset;
+		}
+	}
+
+	.inner-menu {
+		.nano {
+			background: #FFF;
+			box-shadow: -$sidebar-border-width 0 0 #e2e3e6 inset;
+		}
+	}
 }
 
 @media only screen and (max-width: 767px) {
 	html.no-overflowscrolling {
-		.nano {
-			> .nano-content {
-				overflow: scroll !important;
-				overflow-x: hidden !important;
+		.sidebar-left,
+		.sidebar-right,
+		.inner-menu {
+			.nano {
+				> .nano-content {
+					overflow: scroll !important;
+					overflow-x: hidden !important;
+				}
 			}
 		}
 	}

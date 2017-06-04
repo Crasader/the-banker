@@ -3,15 +3,15 @@ html.dark .checkbox-primary,
 .checkbox-primary {
 
 	label:before {
-		background: @skinColor;
-		border-color: darken(@skinColor, 5%);
+		background: @color-primary;
+		border-color: darken(@color-primary, 5%);
 	}
 }
 
 html.dark .checkbox-text-primary,
 .checkbox-text-primary {
 	input[type="checkbox"]:checked + label:after {
-		color: @skinColor;
+		color: @color-primary;
 	}
 }
 
@@ -20,9 +20,9 @@ html.dark .radio-primary,
 .radio-primary {
 
 	input[type="radio"]:checked + label:after {
-		background: @skinColor;
-		-webkit-box-shadow: 0px 0px 1px @skinColor;
-		box-shadow: 0px 0px 1px @skinColor;
+		background: @color-primary;
+		-webkit-box-shadow: 0px 0px 1px @color-primary;
+		box-shadow: 0px 0px 1px @color-primary;
 	}
 
 }
@@ -31,19 +31,19 @@ html.dark .radio-primary,
 .switch {
 	&.switch-primary {
 		.ios-switch .on-background {
-			background: @skinColor;
+			background: @color-primary;
 		}
 	}
 }
 
 /* Progress Bar */
 .progress-bar {
-	background-color: @skinColor;
+	background-color: @color-primary;
 }
 
 .progress {
 	.progress-bar-primary {
-		background-color: @skinColor;
+		background-color: @color-primary;
 	}
 }
 
@@ -51,23 +51,23 @@ html.dark .radio-primary,
 .slider-primary {
 	.ui-slider-range,
 	.ui-slider-handle {
-		background: @skinColor;
+		background: @color-primary;
 	}
 }
 
 .slider-gradient.slider-primary {
 	.ui-slider-range,
 	.ui-slider-handle {
-		background-image: -webkit-linear-gradient(left, lighten(@skinColor, 10%) 0, @skinColor 50%, darken(@skinColor, 10%) 100%);
-		background-image: linear-gradient(left, lighten(@skinColor, 10%) 0, @skinColor 50%, darken(@skinColor, 10%) 100%);
+		background-image: -webkit-linear-gradient(left, lighten(@color-primary, 10%) 0, @color-primary 50%, darken(@color-primary, 10%) 100%);
+		background-image: linear-gradient(left, lighten(@color-primary, 10%) 0, @color-primary 50%, darken(@color-primary, 10%) 100%);
 	}
 }
 
 .slider-gradient.ui-slider-vertical.slider-primary {
 	.ui-slider-range,
 	.ui-slider-handle {
-		background-image: -webkit-linear-gradient(to right, lighten(@skinColor, 10%) 0, @skinColor 50%, darken(@skinColor, 10%) 100%);
-		background-image: linear-gradient(to right, lighten(@skinColor, 10%) 0, @skinColor 50%, darken(@skinColor, 10%) 100%);
+		background-image: -webkit-linear-gradient(to right, lighten(@color-primary, 10%) 0, @color-primary 50%, darken(@color-primary, 10%) 100%);
+		background-image: linear-gradient(to right, lighten(@color-primary, 10%) 0, @color-primary 50%, darken(@color-primary, 10%) 100%);
 	}
 }
 
@@ -82,13 +82,13 @@ html.dark .radio-primary,
 				th {
 					&.prev, &.next {
 						&:hover {
-							background: @skinColor;
+							background: @color-primary;
 						}
 					}
 				}
 
 				&:first-child th:hover {
-					background: @skinColor;
+					background: @color-primary;
 				}
 			}
 		}
@@ -96,17 +96,17 @@ html.dark .radio-primary,
 		tr {
 			td {
 				span:hover {
-					background: @skinColor;
+					background: @color-primary;
 				}
 
 				&.day:hover {
-					background: @skinColor;
+					background: @color-primary;
 				}
 			}
 		}
 
 		tfoot tr th:hover {
-			background: @skinColor;
+			background: @color-primary;
 		}
 	}
 }
@@ -120,7 +120,7 @@ html.dark .datepicker.datepicker-primary,
 				th {
 					&.prev, &.next {
 						&:hover {
-							background: @skinColor;
+							background: @color-primary;
 						}
 					}
 				}
@@ -132,10 +132,10 @@ html.dark .datepicker.datepicker-primary,
 				td {
 					&.day {
 						&:hover {
-							background: @skinColor;
+							background: @color-primary;
 						}
 						&.active {
-							background: @skinColor;
+							background: @color-primary;
 						}
 					}
 				}
@@ -150,20 +150,20 @@ html.dark .datepicker.datepicker-primary,
 		thead {
 			tr {
 				&:first-child {
-					background-color: @skinColor;
+					background-color: @color-primary;
 
 					th {
 						&:hover {
-							background-color: darken(@skinColor, 10%);
+							background-color: darken(@color-primary, 10%);
 						}
 					}
 				}
 
 				&:last-child {
-					background-color: lighten(@skinColor, 5%);
+					background-color: lighten(@color-primary, 5%);
 
 					th:hover {
-						background-color: @skinColor;
+						background-color: @color-primary;
 					}
 				}
 			}
@@ -175,10 +175,10 @@ html.dark .datepicker.datepicker-primary,
 					&.day {
 
 						&:hover {
-							background: @skinColor;
+							background: @color-primary;
 						}
 						&.active {
-							background: @skinColor;
+							background: @color-primary;
 						}
 
 					}
@@ -191,7 +191,7 @@ html.dark .datepicker.datepicker-primary,
 /* Select 2 */
 .select2-container-multi {
 	.select2-choices .select2-search-choice {
-		background: @skinColor;
+		background: @color-primary;
 	}
 }
 
@@ -202,14 +202,14 @@ html.dark .datepicker.datepicker-primary,
 		&.active {
 
 			.badge {
-				background-color: @skinColor;
+				background-color: @color-primary;
 			}
 
 			a {
 				&,
 				&:hover,
 				&:focus {
-					border-top-color: @skinColor;
+					border-top-color: @color-primary;
 				}
 			}
 
@@ -224,7 +224,7 @@ html.dark .datepicker.datepicker-primary,
 
 			&.active {
 				.badge {
-					background-color: @skinColor;
+					background-color: @color-primary;
 				}
 			}
 
@@ -238,7 +238,7 @@ html.dark {
 
 		.steps-progress {
 			.progress-indicator {
-				background: @skinColor;
+				background: @color-primary;
 			}
 		}
 
@@ -247,16 +247,16 @@ html.dark {
 				&.completed {
 					a {
 						span {
-							border-color: @skinColor;
-							background: @skinColor;
+							border-color: @color-primary;
+							background: @color-primary;
 						}
 					}
 				}
 				&.active {
 					a {
 						span {
-							color: @skinColor;
-							border-color: @skinColor;
+							color: @color-primary;
+							border-color: @color-primary;
 						}
 					}
 				}
@@ -278,12 +278,12 @@ html.dark {
 .table > thead > tr.primary > th,
 .table > tbody > tr.primary > th,
 .table > tfoot > tr.primary > th {
-	background-color: @skinColor;
+	background-color: @color-primary !important;
 }
 
 /* Data Tables Loading */
 .dataTables_processing {
-	background-color: @skinColor;
+	background-color: @color-primary;
 }
 
 /* Liquid Meter */
@@ -291,7 +291,7 @@ html.dark {
 	.liquid-meter-selector {
 		a {
 			&.active {
-				color: @skinColor;
+				color: @color-primary;
 			}
 		}
 	}

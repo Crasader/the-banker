@@ -1,14 +1,14 @@
 /* Base */
 a, .btn-link {
-	color: @skinColor;
+	color: @color-primary;
 }
 
 a:hover, a:focus, .btn-link:hover, .btn-link:focus {
-	color: lighten(@skinColor, 5%);
+	color: lighten(@color-primary, 5%);
 }
 
 a:active, .btn-link:active {
-	color: darken(@skinColor, 5%);
+	color: darken(@color-primary, 5%);
 }
 
 /* Sidebar Left */
@@ -19,7 +19,7 @@ a:active, .btn-link:active {
 
 			&:hover {
 				i {
-					color: @skinColor;
+					color: @color-primary;
 				}
 			}
 		}
@@ -40,7 +40,7 @@ a:active, .btn-link:active {
 					li {
 						&.nav-active {
 							a:hover {
-								color: @skinColor;
+								color: @color-primary;
 							}
 						}
 					}
@@ -50,7 +50,7 @@ a:active, .btn-link:active {
 						& > a {
 
 							span.label {
-								background-color: @skinColor;
+								background-color: @color-primary;
 							}
 						}
 
@@ -68,7 +68,7 @@ a:active, .btn-link:active {
 @media only screen and (max-width: 1199px) {
 	html.boxed {
 		.header {
-			border-top-color: @skinColor;
+			border-top-color: @color-primary;
 		}
 	}
 }
@@ -78,13 +78,13 @@ a:active, .btn-link:active {
 
 	html.boxed {
 		.header {
-			border-top-color: @skinColor;
+			border-top-color: @color-primary;
 		}
 	}
 
 	html.boxed {
 		.sidebar-right {
-			border-top-color: @skinColor;
+			border-top-color: @color-primary;
 			min-height: 0;
 		}
 	}
@@ -96,7 +96,7 @@ a:active, .btn-link:active {
 
 		a {
 			&:hover {
-				background: @skinColor;
+				background: @color-primary;
 			}
 		}
 	}
@@ -109,7 +109,7 @@ a:active, .btn-link:active {
 		li {
 
 			&.active {
-				background: @skinColor;
+				background: @color-primary;
 			}
 		}
 
@@ -118,10 +118,10 @@ a:active, .btn-link:active {
 	.mailbox-mail {
 
 		.mailbox-close-mail {
-			color: @skinColor;
+			color: @color-primary;
 
 			&:hover {
-				color: lighten(@skinColor, 5%);
+				color: lighten(@color-primary, 5%);
 			}
 		}
 
@@ -131,7 +131,7 @@ a:active, .btn-link:active {
 
 					a {
 						&:hover {
-							color: @skinColor;
+							color: @color-primary;
 						}
 					}
 				}
@@ -151,7 +151,7 @@ a:active, .btn-link:active {
 			a {
 
 				&:hover {
-					background-color: @skinColor;
+					background-color: @color-primary;
 				}
 
 			}
@@ -167,18 +167,18 @@ a:active, .btn-link:active {
 				.mg-thumb-options {
 
 					.mg-zoom {
-						background-color: @skinColor;
+						background-color: @color-primary;
 					}
 
 					.mg-toolbar {
-						background-color: @skinColor;
+						background-color: @color-primary;
 					}
 				}
 
 			}
 
 			&.thumbnail-selected {
-				box-shadow: 0 0 8px -1px @skinColor;
+				box-shadow: 0 0 8px -1px @color-primary;
 			}
 
 		}
@@ -193,12 +193,12 @@ a:active, .btn-link:active {
 
 		.panel-title-sign {
 			.title {
-				background-color: @skinColor;
+				background-color: @color-primary;
 			}
 		}
 
 		.panel-body {
-			border-top-color: @skinColor;
+			border-top-color: @color-primary;
 		}
 	}
 }
@@ -209,7 +209,7 @@ a:active, .btn-link:active {
 	.current-user {
 
 		.user-image {
-			border-color: @skinColor;
+			border-color: @color-primary;
 		}
 
 	}
