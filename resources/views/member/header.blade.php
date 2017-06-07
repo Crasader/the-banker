@@ -14,10 +14,11 @@
 
     <link rel="shortcut icon" type="image/png" href="{{asset('favicon.png')}}"/>
     <!-- Mobile Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
     <!-- Web Fonts  -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light"
+          rel="stylesheet" type="text/css">
     <!--
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
     -->
@@ -203,10 +204,12 @@
             <span class="separator"></span>
             {{--*/ $passport_balance = Auth::user()->passport_balance /*--}}
             <a href="#" data-toggle="tooltip" data-placement="left"
-            title="Soft Key"  class="mb-xs mt-xs mr-xs btn btn-default">{{ $passport_balance }} <i class="fa fa-key"></i></a>
+               title="Soft Key" class="mb-xs mt-xs mr-xs btn btn-default">{{ $passport_balance }} <i
+                        class="fa fa-key"></i></a>
             {{--*/ $shares_balance = number_format(\App\Classes\SharesClass::getSharesBalance(Auth::user()->id)['shares_balance'], 8) /*--}}
             <a href="#" data-toggle="tooltip" data-placement="right"
-               title="Fixed Deposit" class="mb-xs mt-xs mr-xs btn btn-success"><i class="fa fa-bitcoin"></i> {{ $shares_balance }} </a>
+               title="Fixed Deposit" class="mb-xs mt-xs mr-xs btn btn-success"><i
+                        class="fa fa-bitcoin"></i> {{ $shares_balance }} </a>
             <span class="separator"></span>
             <div id="userbox" class="userbox">
                 <a href="#" data-toggle="dropdown">
@@ -214,7 +217,7 @@
                         <img src="@if(Auth::user()->profile_pic){{S3Files::url('profiles/'.Auth::user()->profile_pic)}} @else {{asset('profiles/no_img.jpg')}} @endif"
                              class="img-rounded"/>
                     </figure>
-                    <div class="profile-info" >
+                    <div class="profile-info">
                         <span class="name">{{Auth::user()->alias}}</span>
                         <span class="role">{{ \App\Classes\UserClass::getUserClass(Auth::user()->id)['user_class_name'] }}</span>
                     </div>
@@ -274,17 +277,6 @@
     <div class="inner-wrapper">
         <!-- start: sidebar -->
         <aside id="sidebar-left" class="sidebar-left">
-
-            <div class="sidebar-header">
-                <div class="sidebar-title">
-                    @yield('title')
-                </div>
-                <div class="sidebar-toggle hidden-xs" data-toggle-class="sidebar-left-collapsed" data-target="html"
-                     data-fire-event="sidebar-left-toggle">
-                    <i class="fa fa-bars" aria-label="Toggle sidebar"></i>
-                </div>
-            </div>
-
             <div class="nano">
                 <div class="nano-content">
                     @if(Auth::user()->user_type == '3')

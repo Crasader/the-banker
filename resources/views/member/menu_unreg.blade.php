@@ -2,18 +2,16 @@
     <ul class="nav nav-main">
         <li class="@yield('home-class')">
             <a href="{{URL::route('home')}}">
-                <i class="fa fa-home" aria-hidden="true"></i>
-                <span>Dashboard</span>
+                <i class="icons icon-screen-desktop" aria-hidden="true"></i>
+                <span>Home</span>
             </a>
         </li>
-
         <li class="@yield('passport-class')">
             <a href="{{URL::route('passport')}}">
                 <i class="icons icon-key" aria-hidden="true"></i>
                 <span>Buy SoftKey</span>
             </a>
         </li>
-
         <li class="nav-parent @yield('pagb-class')">
             <a>
                 <i class="fa fa-sitemap" aria-hidden="true"></i>
@@ -67,10 +65,17 @@
                 <span>{{trans('member.network_list')}}</span>
             </a>
         </li>
+
+        <!-- KAMAL -->
+
+        @include('helpticket.menu-helpticket')
+
+        <!-- KAMAL -->
+
         <li>
             <a href="{{URL::route('logout')}}">
-                <i class="icons icon-power" aria-hidden="true"></i>
-                <span>Logout</span>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                <span>{{trans('member.logout')}}</span>
             </a>
         </li>
 

@@ -41,7 +41,7 @@
                                             <tr class="odd gradeX">
                                                 <td class="hidden-xs hidden-sm">{{ $history['created_at'] }}</td>
                                                 <td class="hidden-xs hidden-sm" style="text-align:center; vertical-align: middle;"><img src="{{asset('assets/images/class/'.$history['new_user_class'].'.png') }}" title={{ $history['new_user_class_name'] }} width="50"></td>
-                                                <td class="hidden-xs hidden-sm" style="text-align:center; vertical-align: middle;">{!! $$history['type'] !!}</td>
+                                                <td class="hidden-xs hidden-sm" style="text-align:center; vertical-align: middle;">{!! $history['type'] !!}</td>
                                                 <!--
                                                 <td>{{ $history['new_user_class'] }}</td>
                                                 -->
@@ -63,7 +63,7 @@
                                                 <td class="hidden-lg">
                                                     <strong>Date :</strong> {{ $history['created_at'] }}<br>
                                                     <img src="{{asset('assets/images/class/'.$history['new_user_class'].'.png') }}" title={{ $history['new_user_class_name'] }} width="50">
-                                                    {!! $$history['type'] !!}<br>
+                                                    {!! $history['type'] !!}<br>
                                                     <strong>Payment From :</strong> {{ $history['sender_user_id'] }}<br>
                                                     <strong>Payment To :</strong> {{ $history['user_id'] }}<br>
                                                     <strong>From :</strong> <a href="https://blockchain.info/address/{{ $history['sender_address'] }}" target="_blank">{{ $history['sender_address'] }}</a><br>
@@ -75,7 +75,7 @@
                                                 <td class="hidden-lg">
                                                     <strong>{{ trans('pagb_history_2.date') }}</strong> {{ $history['created_at'] }}<br>
                                                     <img src="{{asset('assets/images/class/'.$history['new_user_class'].'.png') }}" title={{ $history['new_user_class_name'] }} width="50">
-                                                    {!! $$history['type'] !!}<br>
+                                                    {!! $history['type'] !!}<br>
                                                     <strong>{{ trans('pagb_history_2.paymentfrom') }}</strong> {{ $history['sender_user_id'] }}<br>
                                                     <strong>{{ trans('pagb_history_2.paymentto') }}</strong> {{ $history['user_id'] }}<br>
                                                     <strong>{{ trans('pagb_history_2.from') }}</strong> <a href="https://blockchain.info/address/{{ $history['sender_address'] }}" target="_blank">{{ $history['sender_address'] }}</a><br>

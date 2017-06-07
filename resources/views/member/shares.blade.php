@@ -107,7 +107,7 @@
                         {{trans('brshare.brshare_transac')}}
                     </div>
                     <div class="panel-body" >
-                        {!! $shares_transactions->render() !!}
+
                         <table class="table table-striped table-bordered table-hover" id="dataTables-share">
                             <thead>
                             <tr>
@@ -132,7 +132,9 @@
                             @endif
                             </tbody>
                         </table>
-                        {!! $shares_transactions->render() !!}
+                        @if($shares_transactions == true)
+                            {!! $shares_transactions->render() !!}
+                         @endif
                     </div>
                 </div>
             </div>
