@@ -1,3 +1,6 @@
+// CodeMirror, copyright (c) by Marijn Haverbeke and others
+// Distributed under an MIT license: http://codemirror.net/LICENSE
+
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
     mod(require("../../lib/codemirror"));
@@ -33,12 +36,17 @@ CodeMirror.defineMode('shell', function() {
     'touch vi vim wall wc wget who write yes zsh');
 
   function tokenBase(stream, state) {
+    if (stream.eatSpace()) return null;
 
     var sol = stream.sol();
     var ch = stream.next();
 
+    if (ch === '\\') {
+      stream.next();
+      return null;
+    }
     if (ch === '\'' || ch === '"' || ch === '`') {
-      state.tokens.unshift(tokenString(ch));
+      state.tokens.unshift(tokenString(ch, ch === "`" ? "quote" : "string"));
       return tokenize(stream, state);
     }
     if (ch === '#') {
@@ -63,7 +71,7 @@ CodeMirror.defineMode('shell', function() {
     }
     if (/\d/.test(ch)) {
       stream.eatWhile(/\d/);
-      if(!/\w/.test(stream.peek())) {
+      if(stream.eol() || !/\w/.test(stream.peek())) {
         return 'number';
       }
     }
@@ -73,26 +81,29 @@ CodeMirror.defineMode('shell', function() {
     return words.hasOwnProperty(cur) ? words[cur] : null;
   }
 
-  function tokenString(quote) {
+  function tokenString(quote, style) {
+    var close = quote == "(" ? ")" : quote
     return function(stream, state) {
       var next, end = false, escaped = false;
       while ((next = stream.next()) != null) {
-        if (next === quote && !escaped) {
+        if (next === close && !escaped) {
           end = true;
           break;
         }
-        if (next === '$' && !escaped && quote !== '\'') {
+        if (next === '$' && !escaped && quote !== "'") {
           escaped = true;
           stream.backUp(1);
           state.tokens.unshift(tokenDollar);
           break;
         }
+        if (next === "(" && quote === "(") {
+          state.tokens.unshift(tokenString(quote, style))
+          return tokenize(stream, state)
+        }
         escaped = !escaped && next === '\\';
       }
-      if (end || !escaped) {
-        state.tokens.shift();
-      }
-      return (quote === '`' || quote === ')' ? 'quote' : 'string');
+      if (end || !escaped) state.tokens.shift();
+      return style;
     };
   };
 
@@ -100,8 +111,8 @@ CodeMirror.defineMode('shell', function() {
     if (state.tokens.length > 1) stream.eat('$');
     var ch = stream.next(), hungry = /\w/;
     if (ch === '{') hungry = /[^}]/;
-    if (ch === '(') {
-      state.tokens[0] = tokenString(')');
+    if (/['"(]/.test(ch)) {
+      state.tokens[0] = tokenString(ch, ch == "(" ? "quote" : "string");
       return tokenize(stream, state);
     }
     if (!/\d/.test(ch)) {
@@ -119,9 +130,11 @@ CodeMirror.defineMode('shell', function() {
   return {
     startState: function() {return {tokens:[]};},
     token: function(stream, state) {
-      if (stream.eatSpace()) return null;
       return tokenize(stream, state);
-    }
+    },
+    closeBrackets: "()[]{}''\"\"``",
+    lineComment: '#',
+    fold: "brace"
   };
 });
 

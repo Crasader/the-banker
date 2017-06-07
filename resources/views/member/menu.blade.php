@@ -5,7 +5,7 @@
         <li class="@yield('home-class')">
             <a href="{{URL::route('home')."?xtoken=".md5(rand(1000,9999))}}">
                 <i class="fa fa-home" aria-hidden="true"></i>
-                <span>{{trans('member.home')}}</span>
+                <span>Dashboard</span>
             </a>
         </li>
         
@@ -21,8 +21,8 @@
 
         <li class="@yield('passport-class')">
             <a href="{{URL::route('passport')."?xtoken=".md5(rand(1000,9999))}}">
-                <i class="" aria-hidden="true"><img src="{{asset('assets/images/passport_ico.png')}}" width="20"/></i>
-                <span>{{trans('member.purchase_passport')}}</span>
+                <i class="icons icon-key" aria-hidden="true"></i>
+                <span>Buy SoftKey</span>
             </a>
         </li>
 
@@ -178,86 +178,22 @@
                 <span>{{trans('member.register_new_member')}}</span>
             </a>
         </li>
-
         <li class="@yield('network-class')">
             <a href="{{URL::route('network')."?xtoken=".md5(rand(1000,9999))}}">
                 <i class="fa fa-briefcase" aria-hidden="true"></i>
                 <span>{{trans('member.network_list')}}</span>
             </a>
         </li>
-
         <li class="@yield('faq-class')" style="display: none;">
             <a href="{{URL::route('faq')."?xtoken=".md5(rand(1000,9999))}}">
                 <i class="fa fa-question-circle" aria-hidden="true"></i>
                 <span>{{trans('member.faq')}}</span>
             </a>
         </li>
-
-        <li class="nav-parent @yield('promo-class')">
-            <a>
-                <i class="fa fa-bullhorn" aria-hidden="true"></i>
-                <span>{{trans('member2.marketingtools')}}</span>
-                <!--
-                &nbsp;&nbsp;
-                <span class="label label-primary">{{trans('member2.new')}}</span>
-                -->
-            </a>
-            <ul class="nav nav-children">
-                <li class="@yield('promopages-class')">
-                    <a href="{{URL::route('promo-pages')."?xtoken=".md5(rand(1000,9999))}}">
-                        {{trans('member2.landingpages')}}
-                    </a>
-                </li>
-                <li class="@yield('promobanners-class')">
-                    <a href="{{URL::route('promo-banner')."?xtoken=".md5(rand(1000,9999))}}">
-                        {{trans('member2.banners_videos')}}
-                    </a>
-                </li>
-                <li class="@yield('promosubscriber-class')">
-                    <a href="{{URL::route('prospect-management')."?xtoken=".md5(rand(1000,9999))}}">
-                        {{trans('member2.prospect')}}
-                    </a>
-                </li>
-                <li class="@yield('marketingmeterial-class')">
-                    <a href="{{URL::route('marketing-meterial')."?xtoken=".md5(rand(1000,9999))}}">
-                        {{trans('member2.marketingmat')}}
-                    </a>
-                </li>
-            </ul>
-        </li>
-        
-        <!-- KAMAL -->
-        
-          @include('helpticket.menu-helpticket')
-         
-        <!-- KAMAL -->
-
-        <?php
-                if(Auth::user()->id == '2') {
-        ?>
-
-        <li class="@yield('gallery-class')">
-            <a href="{{URL::route('gallery')."?xtoken=".md5(rand(1000,9999))}}">
-                <i class="fa fa-file-photo-o" aria-hidden="true"></i>
-                <span>Gallery</span>
-                <span class="label label-primary pull-right">{{trans('member2.new')}}</span>
-            </a>
-        </li>
-
-        <?php } ?>
-
-        <li class="@yield('faq-class')">
-            <a href="{{URL::route('testimonial')."?xtoken=".md5(rand(1000,9999))}}">
-                <i class="fa fa-video-camera" aria-hidden="true"></i>
-                <span>Upload Testimonial</span>
-                <span class="label label-primary pull-right">{{trans('member2.new')}}</span>
-            </a>
-        </li>
-
         <li>
             <a href="{{URL::route('logout')."?xtoken=".md5(rand(1000,9999))}}">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                <span>{{trans('member.logout')}}</span>
+                <i class="icons icon-power" aria-hidden="true"></i>
+                <span>Log Out</span>
             </a>
         </li>
 

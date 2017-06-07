@@ -3,14 +3,14 @@
         <li class="@yield('home-class')">
             <a href="{{URL::route('home')}}">
                 <i class="fa fa-home" aria-hidden="true"></i>
-                <span>{{trans('member.home')}}</span>
+                <span>Dashboard</span>
             </a>
         </li>
 
         <li class="@yield('passport-class')">
             <a href="{{URL::route('passport')}}">
-                <i class="" aria-hidden="true"><img src="{{asset('assets/images/passport_ico.png')}}" width="20"/></i>
-                <span>{{trans('member.purchase_passport')}}</span>
+                <i class="icons icon-key" aria-hidden="true"></i>
+                <span>Buy SoftKey</span>
             </a>
         </li>
 
@@ -67,17 +67,10 @@
                 <span>{{trans('member.network_list')}}</span>
             </a>
         </li>
-
-        <!-- KAMAL -->
-
-        @include('helpticket.menu-helpticket')
-
-        <!-- KAMAL -->
-
         <li>
             <a href="{{URL::route('logout')}}">
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                <span>{{trans('member.logout')}}</span>
+                <i class="icons icon-power" aria-hidden="true"></i>
+                <span>Logout</span>
             </a>
         </li>
 

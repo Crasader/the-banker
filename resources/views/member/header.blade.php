@@ -23,15 +23,16 @@
     -->
     <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap/css/bootstrap.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/vendor/font-awesome/css/font-awesome.css')}}"/>
-    <link rel="stylesheet" href="{{asset('assets/vendor/lineicons/css/lineicons.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/vendor/simple-line-icons/css/simple-line-icons.css')}}"/>
+
     <link rel="stylesheet" href="{{asset('assets/vendor/magnific-popup/magnific-popup.css')}}"/>
-    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/datepicker3.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}"/>
 
     <link rel="stylesheet" href="{{asset('assets/plugin/flagstrap/css/flags.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/plugin/countdownTimer/CSS/jquery.countdownTimer.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/vendor/jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css')}}"/>
-    <link rel="stylesheet" href="{{asset('assets/vendor/morris/morris.css')}}"/>
-    <link rel="stylesheet" href="{{asset('assets/vendor/select2/select2.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/vendor/morris.js/morris.css')}}"/>
+    <link rel="stylesheet" href="{{asset('assets/vendor/select2/css/select2.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/vendor/jquery-datatables-bs3/assets/css/datatables.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/vendor/pnotify/pnotify.custom.css')}}"/>
     <link rel="stylesheet" href="{{asset('assets/vendor/jorgchart/jquery.jOrgChart.css')}}"/>
@@ -45,24 +46,24 @@
     <script src="{{asset('assets/vendor/bootstrap/js/bootstrap.js')}}"></script>
     <script src="{{asset('assets/vendor/nanoscroller/nanoscroller.js')}}"></script>
     <script src="{{asset('assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js')}}"></script>
-    <script src="{{asset('assets/vendor/magnific-popup/magnific-popup.js')}}"></script>
-    <script src="{{asset('assets/vendor/jquery-placeholder/jquery.placeholder.js')}}"></script>
+    <script src="{{asset('assets/vendor/magnific-popup/jquery.magnific-popup.js')}}"></script>
+    <script src="{{asset('assets/vendor/jquery-placeholder/jquery-placeholder.js')}}"></script>
     <script src="{{asset('assets/plugin/polygot/js/jquery.polyglot.language.switcher.js')}}"></script>
     <script src="{{asset('assets/plugin/flagstrap/js/jquery.flagstrap.min.js')}}"></script>
     <script src="{{asset('assets/plugin/countdownTimer/jquery.countdownTimer.js')}}"></script>
-    <script src="{{asset('assets/vendor/select2/select2.js')}}"></script>
+    <script src="{{asset('assets/vendor/select2/js/select2.js')}}"></script>
     <script src="{{asset('assets/vendor/jquery-datatables/media/js/jquery.dataTables.js')}}"></script>
     <script src="{{asset('assets/vendor/jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js')}}"></script>
     <script src="{{asset('assets/vendor/jquery-datatables-bs3/assets/js/datatables.js')}}"></script>
     <script src="{{asset('assets/vendor/flot/jquery.flot.js')}}"></script>
-    <script src="{{asset('assets/vendor/flot-tooltip/jquery.flot.tooltip.js')}}"></script>
+    <script src="{{asset('assets/vendor/flot.tooltip/flot.tooltip.js')}}"></script>
     <script src="{{asset('assets/vendor/flot/jquery.flot.pie.js')}}"></script>
     <script src="{{asset('assets/vendor/flot/jquery.flot.categories.js')}}"></script>
     <script src="{{asset('assets/vendor/flot/jquery.flot.resize.js')}}"></script>
     <script src="{{asset('assets/vendor/raphael/raphael.js')}}"></script>
-    <script src="{{asset('assets/vendor/morris/morris.js')}}"></script>
+    <script src="{{asset('assets/vendor/morris.js/morris.js')}}"></script>
     <script src="{{asset('assets/plugin/dateformat/jquery-dateFormat.js')}}"></script>
-    <script src="{{asset('assets/vendor/jquery-appear/jquery.appear.js')}}"></script>
+    <script src="{{asset('assets/vendor/jquery-appear/jquery-appear.js')}}"></script>
     <script src="{{asset('assets/vendor/pnotify/pnotify.custom.js')}}"></script>
     <script src="{{asset('assets/vendor/jorgchart/jquery.jOrgChart.js')}}"></script>
     <script src="{{asset('assets/vendor/jorgchart/prettify.js')}}"></script>
